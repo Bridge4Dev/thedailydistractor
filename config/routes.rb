@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'static_pages#home'
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-  
+  resources :users
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

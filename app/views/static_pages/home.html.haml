@@ -1,2 +1,7 @@
 %h1 The Daily Distractor
 %p This is the temporary home page for The Daily Distractor
+
+-if user_signed_in?
+  =link_to("Sign Out", destroy_user_session_path, :method => :delete)
+-else 
+  =link_to("Log In", new_user_session_path)
