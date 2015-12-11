@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   resources :users
+  resources :posts
 
 
   # Example of regular route:

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
-
+  before_action :require_login, only: [:show]
 
   def show
 
@@ -44,6 +44,13 @@ class UsersController < ApplicationController
 
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def require_login
+      unless user_signed_in?
+        session[:forward_url] = request.fullpath
+        redirect_to new_user_session_path, notice: "Please sign in."
+      end
     end
 
     def user_params
