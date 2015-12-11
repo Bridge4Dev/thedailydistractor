@@ -42,6 +42,7 @@ class PostsController < ApplicationController
         if admin_signed_in?
           redirect_to root_path, :notice => "You do not have access to this area."
         else
+          session[:forward_url] = request.fullpath
           redirect_to new_admin_session_path, :notice => "Admin only. Please sign in."
         end
       end
