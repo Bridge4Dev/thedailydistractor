@@ -20,6 +20,11 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 
+# Gems for wysiwyg and photos
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 
 group :development, :test do
