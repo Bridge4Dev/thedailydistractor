@@ -2,5 +2,6 @@
 
 %h1 Placeholder for Posts show page.
 
-%h1=@post.post_title
-%p=@post.post_content
+%div
+  %h1= @post.post_title
+  %p= raw(@post.post_content)

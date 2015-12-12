@@ -1,0 +1,13 @@
+
+
+= form_for @post do |f|
+  .field
+    = f.label :post_title
+    %br/
+    = f.text_field :post_title
+  .field
+    =f.label :post_content
+    %br/
+    =f.cktext_area :post_content
+  .actions
+    = f.submit "Create Post"
