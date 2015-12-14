@@ -1,0 +1,14 @@
+%h1 Current Categories
+%ul
+  - Category.all.each do |cat|
+    %li
+      = cat.id.to_s + ": " + cat.post_category
+
+
+= form_for @category do |f|
+  .field
+    = f.label :post_category
+    %br/
+    = f.text_field :post_category
+  .actions
+    = f.submit "Create Post"
