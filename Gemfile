@@ -25,6 +25,9 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# Gems for styling and css
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
 
 
 group :development, :test do
