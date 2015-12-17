@@ -13,3 +13,40 @@
  */
 
  @import "bootstrap";
+
+
+
+
+
+ /****** WRAP CONTAINERS NO PADDING ******/
+
+.wrap-100 {
+  width: 100%;
+}
+
+.wrap-80 {
+  width: 80%;
+}
+
+.wrap-75 {
+  width: 75%;
+}
+
+.wrap-60 {
+  width: 60%;
+}
+
+
+/****** TEXT FORMATTING ******/
+
+.center {
+  text-align: center;
+}
+
+
+/****** NAV FORMATTING ******/
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,16 @@
+%header.wrap-100
+  .header-logo-area
+    %h1.center The Daily Distractor
+    %p.center Placeholder text area for catchphrase
+  %nav.navbar.navbar-dark.bg-inverse
+    .container
+      %button.navbar-toggler.hidden-sm-up{"data-target" => "#exCollapsingNavbar2", "data-toggle" => "collapse", :type => "button"}
+        &#9776;
+      #exCollapsingNavbar2.collapse.navbar-toggleable-xs
+        %ul.nav.navbar-nav
+          %li.nav-item= link_to "Home", root_path, class: "nav-link"
+          %li.nav-item= link_to "News", "#", class: "nav-link"
+          %li.nav-item= link_to "Sports", "#", class: "nav-link"
+          %li.nav-item= link_to "Celebs", "#", class: "nav-link"
+          %li.nav-item= link_to "TV/Movies", "#", class: "nav-link"
+          %li.nav-item= link_to "Funnies", "#", class: "nav-link"
