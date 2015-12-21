@@ -1,13 +1,12 @@
 
-%p.center This is the temporary home page for The Daily Distractor
+.jumbotron  
+  %h1.center This is where a carousel with most recent/popular articles goes
 
 -if !user_signed_in? && !admin_signed_in?
-  =link_to("Log In", new_user_session_path)
-  %br/
-  =link_to("Admin Log In", new_admin_session_path)
+  =link_to("Admin Log In", new_admin_session_path, class: "btn btn-danger",)
 -elsif user_signed_in?
-  =link_to("Sign Out", destroy_user_session_path, :method => :delete)
+  =link_to("Sign Out", destroy_user_session_path, class: "btn btn-primary", :method => :delete)
 -elsif admin_signed_in?
-  =link_to("Admin Sign Out", destroy_admin_session_path, :method => :delete)
+  =link_to("Admin Sign Out", destroy_admin_session_path, class: "btn btn-danger", :method => :delete)
 
 

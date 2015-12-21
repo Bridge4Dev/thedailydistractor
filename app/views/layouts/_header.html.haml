@@ -13,4 +13,12 @@
           %li.nav-item= link_to "Sports", "#", class: "nav-link"
           %li.nav-item= link_to "Celebs", "#", class: "nav-link"
           %li.nav-item= link_to "TV/Movies", "#", class: "nav-link"
+          %li.nav-item= link_to "Viral", "#", class: "nav-link"
           %li.nav-item= link_to "Funnies", "#", class: "nav-link"
+          -if !user_signed_in? && !admin_signed_in?
+            %li.nav-item= link_to "Log In", new_user_session_path, class: "nav-link"
+          -elsif user_signed_in?
+            =link_to("Sign Out", destroy_user_session_path, class: "nav-link", :method => :delete)
+          -elsif admin_signed_in?
+            =link_to("Sign Out", destroy_admin_session_path, class: "nav-link", :method => :delete)
+
