@@ -9,22 +9,33 @@
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
   %body
     = render 'layouts/header'
-    .container-fluid.center.test-background.test-border
-      .row
-        .col-md-8.col-md-offset-2.test-background3.test-border
-          %h1 Advertisement here
-          %h3 Create partial file
-    .container-fluid.center.test-background.test-border
-      .row
-        .col-md-2.hidden-sm-down.test-background3.test-border
-          %p advertisement in this column
-          %p create partial file
-          %p create partial file
-          %p advertisement in this column
-        .col-md-8.test-background2.test-border
-          = yield
-        .col-md-2.hidden-sm-down.test-background3.test-border
-          %p advertisement in this column
-          %p create partial file
-          %p create partial file
-          %p advertisement in this column
+    -if admin_signed_in?
+      .container-fluid.center.test-background.test-border
+        .row
+          .col-md-8.col-md-offset-2.test-background3.test-border
+      .container-fluid.center.test-background.test-border
+        .row
+          .col-md-2.hidden-sm-down.test-background3.test-border
+          .col-md-8.test-background2.test-border
+            = yield
+          .col-md-2.hidden-sm-down.test-background3.test-border
+    -else
+      .container-fluid.center.test-background.test-border
+        .row
+          .col-md-8.col-md-offset-2.test-background3.test-border
+            %h1 Advertisement here
+            %h3 Create partial file
+      .container-fluid.center.test-background.test-border
+        .row
+          .col-md-2.hidden-sm-down.test-background3.test-border
+            %p advertisement in this column
+            %p create partial file
+            %p create partial file
+            %p advertisement in this column
+          .col-md-8.test-background2.test-border
+            = yield
+          .col-md-2.hidden-sm-down.test-background3.test-border
+            %p advertisement in this column
+            %p create partial file
+            %p create partial file
+            %p advertisement in this column

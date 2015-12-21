@@ -1,6 +1,11 @@
-
-.jumbotron  
-  %h1.center This is where a carousel with most recent/popular articles goes
+-if admin_signed_in?
+  .jumbotron
+    %h1 Admin Only Area
+    %p This is the landing page for Admins.  Create/Edit posts.  View pageviews, clicks, etc.
+  
+-else
+  .jumbotron  
+    %h1.center This is where a carousel with most recent/popular articles goes
 
 -if !user_signed_in? && !admin_signed_in?
   =link_to("Admin Log In", new_admin_session_path, class: "btn btn-danger",)
